@@ -40,7 +40,11 @@ export default function SignUp({ navigation }) {
             <Formik
                 initialValues={{ name: '', email: '', password: '' }}
                 validationSchema={SignUpSchema}
-                onSubmit={handleSignUp}
+                onSubmit={async (values, { resetForm }) => {
+                    await handleSignUp(values);
+                    resetForm();
+                    navigation.navigate('Main'); // Navegar a la pantalla 'Main' si es válido
+                }}
             >
                 {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
                     <>

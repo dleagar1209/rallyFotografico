@@ -52,7 +52,15 @@ export default function Login({ navigation }) {
                         />
                         {errors.password && touched.password && <Text style={styles.error}>{errors.password}</Text>}
 
-                        <Button title="Iniciar Sesión" onPress={handleSubmit} />
+                        <Button
+                            title="Iniciar Sesión"
+                            onPress={() => {
+                                handleSubmit();
+                                if (!errors.email && !errors.password) {
+                                    navigation.navigate('Main');
+                                }
+                            }}
+                        />
                     </>
                 )}
             </Formik>
