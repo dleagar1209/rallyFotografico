@@ -17,7 +17,7 @@ export default function Main({ navigation }) {
                     accessible={true}
                     accessibilityLabel="Abrir configuraciones"
                     onPress={() => {
-                        // Aquí lógica para abrir la sección de Configuraciones
+                        navigation.navigate('Options');
                     }}
                 >
                     <Icon name="settings-outline" size={24} color="#333" />
@@ -61,7 +61,7 @@ export default function Main({ navigation }) {
                     <Text style={styles.buttonText}>Unirse como público</Text>
                 </TouchableOpacity>
             </View>
-
+                    
             {/* Barra de navegación inferior */}
             <View style={styles.navBar}>
                 <TouchableOpacity
