@@ -14,8 +14,8 @@ export default function Login({ navigation }) {
         try {
             const { email, password } = values;
             await signInWithEmailAndPassword(auth, email, password);
+            navigation.navigate('Main'); // Cambio aquí
             Alert.alert('Inicio de sesión exitoso');
-            navigation.navigate('Home');
         } catch (error) {
             Alert.alert('Error', error.message);
         }
@@ -54,12 +54,7 @@ export default function Login({ navigation }) {
 
                         <Button
                             title="Iniciar Sesión"
-                            onPress={() => {
-                                handleSubmit();
-                                if (!errors.email && !errors.password) {
-                                    navigation.navigate('Main');
-                                }
-                            }}
+                            onPress={handleSubmit} // Cambio aquí para no navegar antes del login real
                         />
                     </>
                 )}
