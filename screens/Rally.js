@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export default function Main({ navigation }) {
+export default function Rally({ navigation }) {
     return (
         <SafeAreaView style={styles.container}>
             {/* Ícono de configuración en esquina superior derecha */}
@@ -24,41 +24,54 @@ export default function Main({ navigation }) {
                 </TouchableOpacity>
             </View>
 
-            {/* Contenido principal */}
-            <View style={styles.mainContent}>
-                <Text style={styles.title}>Bienvenido/a</Text>
-
+            {/* Barra de navegación inferior */}
+            <View style={styles.navBar}>
                 <TouchableOpacity
-                    style={styles.button}
-                    accessible={true}
-                    accessibilityLabel="Crear una sesión"
+                    style={styles.navItem}
                     onPress={() => {
                         navigation.navigate('Rally');
                     }}
+                    accessible={true}
+                    accessibilityLabel="Ir a inicio"
                 >
-                    <Text style={styles.buttonText}>Crear una sesión</Text>
+                    <Icon name="home-outline" size={24} color="#333" />
+                    <Text style={styles.navText}>Inicio</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    style={styles.button}
-                    accessible={true}
-                    accessibilityLabel="Unirse a una sesión como participante"
+                    style={styles.navItem}
                     onPress={() => {
-                        // Lógica para unirse como participante
+                        navigation.navigate('Images');
                     }}
+                    accessible={true}
+                    accessibilityLabel="Ir a sección de imágenes"
                 >
-                    <Text style={styles.buttonText}>Unirse como participante</Text>
+                    <Icon name="image-outline" size={24} color="#333" />
+                    <Text style={styles.navText}>Fotos</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    style={styles.button}
-                    accessible={true}
-                    accessibilityLabel="Unirse a una sesión como público"
+                    style={styles.navItem}
                     onPress={() => {
-                        // Lógica para unirse como público
+                        navigation.navigate('Users');
                     }}
+                    accessible={true}
+                    accessibilityLabel="Ir al perfil de usuario"
                 >
-                    <Text style={styles.buttonText}>Unirse como público</Text>
+                    <Icon name="person-outline" size={24} color="#333" />
+                    <Text style={styles.navText}>Perfil</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.navItem}
+                    onPress={() => {
+                        navigation.navigate('Stats');
+                    }}
+                    accessible={true}
+                    accessibilityLabel="Ir a otra sección"
+                >
+                    <Icon name="stats-chart-outline" size={24} color="#333" />
+                    <Text style={styles.navText}>Estadísticas</Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
@@ -79,6 +92,7 @@ const styles = StyleSheet.create({
     },
     mainContent: {
         flex: 1,
+        paddingTop: 60,
         justifyContent: 'center',
         alignItems: 'center',
         paddingHorizontal: 20,

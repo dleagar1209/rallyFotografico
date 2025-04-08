@@ -11,6 +11,7 @@ import Main from './screens/Main';
 import Users from './screens/Users';
 import Images from './screens/Images';
 import Stats from './screens/Stats';
+import Rally from './screens/Rally';
 import { auth } from './firebaseConfig';
 
 const Stack = createStackNavigator();
@@ -50,6 +51,7 @@ export default function App() {
         <Stack.Screen name="Users" component={Users} />
         <Stack.Screen name="Images" component={Images} />
         <Stack.Screen name="Stats" component={Stats} />
+        <Stack.Screen name="Rally" component={Rally} />
       </Stack.Navigator>
     </NavigationContainer>
   );
