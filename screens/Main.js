@@ -33,7 +33,7 @@ export default function Main({ navigation }) {
                     accessible={true}
                     accessibilityLabel="Crear una sesión"
                     onPress={() => {
-                        navigation.navigate('Rally');
+                        navigation.navigate('Rally');//La idea es insertar un parametro en la BD que indique el tipo de sesión.
                     }}
                 >
                     <Text style={styles.buttonText}>Crear una sesión</Text>
