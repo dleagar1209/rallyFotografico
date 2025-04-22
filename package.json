@@ -12,6 +12,7 @@
     "@react-native-firebase/app": "^21.13.0",
     "@react-navigation/native": "^7.1.4",
     "@react-navigation/stack": "^7.2.8",
+    "eas-cli": "^16.3.2",
     "expo": "~52.0.46",
     "expo-status-bar": "~2.0.1",
     "firebase": "^11.6.0",
@@ -23,6 +24,22 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
+  },
+  "expo": {
+    "doctor": {
+      "appConfigFieldsNotSyncedCheck": {
+        "enabled": false
+      },
+      "reactNativeDirectoryCheck": {
+        "enabled": true,
+        "exclude": [
+          "firebase",
+          "react-native-vector-icons",
+          "yup"
+        ],
+        "listUnknownPackages": false
+      }
+    }
   },
   "private": true
 }
